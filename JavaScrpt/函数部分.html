@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // //递归 一个人的工资是1万元,按照每年新增%10,算20年后的工资
+        // function recursive(n) {
+        //     if (n == 1) {
+        //         return 10000;
+        //     }
+        //     return recursive(n - 1) * 1.1
+        // }
+        //  var colar = recursive(20);
+        // // console.log('colar', colar);
+        // document.write("20年后,小慕的月薪为" +colar);
+        // var year = 8; //年
+        // var t = 0.05; //涨幅
+
+        // // 计算每年工资
+        // function recursive(y, t) {
+        //     if (y == 1) return 10000;
+
+        //     // 补充代码
+        //     return recursive(y - 1, t) * (1 + t);
+        // }
+        // var colar = recursive(year, t).toFixed(2)
+        // document.write("20年后,小慕的月薪为" + colar);
+        //     function fnCellBack(n){
+        //     if(n==1) return '抱着我的小鲤鱼';
+        //     return fnCellBack(n-1)+'抱着';
+        // }
+        // function fnCellBack1(n){
+        //     if(n==1) return '的我'
+
+        //     return fnCellBack1(n-1)+'的我'
+        // }
+        // document.write('吓得我抱起了'+fnCellBack(3)+fnCellBack1(2))
+
+        //使用递归实现深克隆
+        var arr = [1, 2, [2, 3]];
+
+        function cloneArray(arr) {
+            var newArr = [];
+            for (var i = 0, len = arr.length; i < len; i++) {
+                if (Array.isArray(arr[i])) {
+                    newArr.push(cloneArray(arr[i]))
+                } else {
+                    newArr.push(arr[i]);
+                }   
+            }
+            return newArr;
+        }
+        var data = cloneArray(arr)
+        console.log(data);
+        arr[2].shift(1)
+        console.log(cloneArray(data));
+    </script>
+</body>
+
+</html>

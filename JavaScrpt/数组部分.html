@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //     var arr = [1,2,3,4];
+        //     console.log(arr.shift(),arr)
+        //     arr.unshift('首项新增几行')
+        //     console.log(arr)
+        //     arr[9]='test';
+        //     console.log(arr)
+        //    document.write('将方法写在页面上'+'<br>'+'下一行<br>')
+        //    document.write(arr)
+
+        // 替换方法的测试
+        // var data;
+        // var arr = ['西瓜', '哈密瓜', '香蕉', '苹果'];
+        // //在特定的位置插入葡萄和火龙果
+        // data = arr.splice(1, 0, '葡萄', '火龙果');
+        // console.log('data', data,Array.isArray(data))
+        // document.write(JSON.stringify(arr))
+        // //删掉西瓜选项
+        // data = arr.splice(0, 1);
+        // document.write('<br>' + JSON.stringify(arr))
+        // console.log('data', data);
+        // //替换火龙果和哈密瓜为选项
+        // arr.splice(1, 2, '梨子', '荔枝');
+        // document.write('<br>' + JSON.stringify(arr))
+
+        //slice方法的测试
+
+
+        //include方法测试
+        // var arr = [1,'2',2,2,3,1,'1'];
+        // var rsArr = [];
+        // for(var i=0,len =arr.length;i<len;i++){
+        //     if(!rsArr.includes(parseInt(arr[i]))){
+        //         rsArr.push(parseInt(arr[i]));
+        //     }
+        // }
+        // console.log('rsArr',rsArr);
+
+        //取数组随机三个数
+        //通过随机去下标获取数组中的随机项 获取到后需要从原数组删除这个随机项
+        // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11];
+        // var rsArr = [];
+        // for (var i = 0; i < 3; i++) { 
+
+        //     rsArr.push(arr.splice(parseInt(Math.random() * arr.length), 1))
+        // }
+        // console.log(rsArr);
+
+        //排序 冒泡排序 将最小的元素依次往上排就叫冒泡排序
+        var arr = [9, 3, 5, 2, 8, 34, 21];
+        // var len= arr.length,min=arr[0];
+        // for(var i=0;i<len-1;i++){
+        //     for(var j=i+1;j<len;j++){
+        //         var mid;
+        //         if(arr[i]>arr[j]){
+        //             mid=arr[i];
+        //             arr[i] = arr[j];
+        //             arr[j]=mid;
+        //         }
+        //     }
+        // }
+        // console.log(arr);
+
+        //关于i和j的联系  以及复杂段 n*(n-1)/2  n =arr.length 数组长度为4 需要跑3+2+1次
+        for (var i = 1; i < arr.length; i++) {
+            for (var j = arr.length - 1; j >= i; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    var temp;
+                    temp = arr[j - 1];
+                    arr[j - 1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        console.log(arr);
+
+    </script>
+</body>
+
+</html>

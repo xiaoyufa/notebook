@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //添加一个事件监听对象 当页面加载完毕后window.onload再执行函数中的方法
+        window.onload = function () {
+            var box1 = document.getElementById('box1')
+            console.log(document.getElementById('box1'))
+            console.log(typeof document.getElementById('box1'))
+            console.log(document.getElementById('box1').nodeType)
+            console.log(document.getElementById('box1').nodeName)
+        }
+    </script>
+</head>
+
+<body>
+   
+    <div id="box1">我是box1</div>
+    <div id="box2">我是box2</div>
+
+</body>
+
+</html>

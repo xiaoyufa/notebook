@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试JS中循环语句的用法以及算法</title>
+</head>
+
+<body>
+    <script>
+        // 判断一个数是否自然数的平方中最先大于6989  while循环当不确定范围的时候
+        var n = 0, m;
+        while(n*n<=6989){
+            n++;
+        }
+        console.log(n)
+
+        //switch case  对于一个变量分多种情况进行讨论的时候
+        var month = Number(prompt('请输入1-12之间的数字,来表示月份!'));
+        switch(month){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+            console.log(month+'月有31天');
+            break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+            console.log(month+'月有31天');
+            break;
+            case 2:
+            console.log(month+'月有28天或者29天');
+            break;
+            default:console.log('请输入正确的数字');
+
+        }
+
+        //根据成绩划分档次
+        var num = prompt('请输入你本次的成绩');
+        console.log(num);
+        if(num<60){
+            console.log('你的成绩不合格');
+        }else if(num<75){
+            console.log('你的成绩为差')
+        }else if(num<85){
+            console.log('你的成绩为良')
+        }else if(num<100){
+            console.log('你的成绩为优')
+        }
+
+        
+
+
+
+
+    </script>
+    <p>测试页面</p>
+</body>
+
+</html>

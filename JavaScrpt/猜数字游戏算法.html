@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字算法</title>
+    <script>
+        function startGuessNumber() {
+            //获取一个随机数
+            var n = parseInt(Math.random() * 101);
+            // alert(n);
+            var min = 1;
+            var max = 100;
+            while (true) {
+                var num = Number(prompt('请输入' + min + '到' + max + '的数字'));
+                if (num > max || num < min) {
+                    alert('请输入正确的数字范围');
+                    continue;
+                }
+                if (num > n) {
+                    alert('猜大了');
+                    max = num;
+                } else if (num < n) {
+                    alert('猜小了')
+                    min = num;
+                } else {
+                    alert('恭喜你,猜对了!!');
+                    break;
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <button onclick="startGuessNumber()">猜数字游戏</button>
+
+</body>
+
+</html>

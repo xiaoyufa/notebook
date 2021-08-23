@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 闭包 -->
+    <script>
+        // function fun() {
+        //     var name = "慕课网";
+
+        //     var inner = function () {
+        //        alert(name)
+        //     }
+        //     return inner;
+        // }
+
+        // var inner = fun();
+        // inner();
+    </script>
+
+    <!-- 闭包记忆性的案例 -->
+    <script>
+        function createCheckTemp(standardTemp) {
+            function checkTemp(n) {
+                if (n <= standardTemp) {
+                    alert('你的体温正常')
+                } else {
+                    alert('你的体温偏高')
+                }
+            }
+            return checkTemp;
+        }
+        //利用闭包的记忆性创建一个标准体温为37.3的函数
+        var checkTemp_A = createCheckTemp(37.3);
+        //创建一个标准体温为37.5的函数 
+        var checkTemp_B = createCheckTemp(37.5);
+        checkTemp_A(37.4)
+        checkTemp_B(37.4)
+    </script>
+</body>
+
+</html>
