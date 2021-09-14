@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box1">
+        <p id="p1">测试1</p>
+        <p id='p2'>测试2</p>
+        <p>测试3</p>
+    </div>
+    <script>
+        var oDiv = document.getElementById('box1');
+        var ops = document.getElementsByTagName('p');
+        //创建p标签
+        var oP = document.createElement('p');
+        console.log(oP);
+        oP.innerText = 'js创建测试p4';
+        oP.innerText = oP.innerText + '连接';
+        console.log(oP);
+        //挂靠到子节点的最后
+        // oDiv.appendChild(oP);
+        //插入到标杆节点
+        oDiv.insertBefore(oP,ops[1]);
+
+    </script>
+</body>
+
+</html>

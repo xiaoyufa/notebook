@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id='table'>
+        <caption>动态创建20行12列的表格</caption>
+        
+    </table>
+    <script>
+        var oTable = document.getElementById('table');
+        
+        for(var i=0;i<20;i++){
+           var lineObj = document.createElement('tr');
+           oTable.appendChild(lineObj);
+            for(var j=0;j<12;j++){
+              var colObj  =  document.createElement('td');
+              colObj.innerText='第'+i+'行第'+j+'列';
+              lineObj.appendChild(colObj);
+            }
+        }
+
+    </script>
+</body>
+</html>

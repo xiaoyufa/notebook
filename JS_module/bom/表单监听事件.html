@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="myform">
+       <p>姓名<input type="text" name="namefield"></p> 
+       <p>年龄<input type="text" name="agefield"></p>
+       <p><input type="submit" name="submit"></p> 
+       <p><input type="reset" name="reset"></p> 
+       
+    </form>
+    <script>
+        var myform = document.getElementById('myform');
+        var namefield = myform.namefield;
+        var  agefield = myform.agefield;
+        namefield.onfocus = function (){
+            console.log('我是表单聚焦')
+        }
+        namefield.onblur = function (){
+            console.log('我是表单失焦')
+        }
+        namefield.oninput = function (){
+            console.log('正在修改')
+        }
+        namefield.onchange = function (){
+            console.log('我是表单已修改')
+        }
+        myform.onsubmit=function (){
+            alert('提交')
+        }
+        myform.onreset=function (){
+            alert('重置')
+        }
+        
+
+    </script>
+</body>
+</html>

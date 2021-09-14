@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function People(name,age,sex){
+            this.name=name;
+            this.age=age;
+            this.sex = sex;    
+        }
+        People.prototype.nationality = '中国';
+        console.log(People.prototype);
+        //实例化一个小明的实例
+        var xiaoming = new People('小明',12,'男');
+        console.log(xiaoming.__proto__);
+        xiaoming.nationality = '美国';
+        //比较实例的__proto__ 和 函数People的prototype属性 在谷歌浏览器可以测试 其他的不行
+        console.log(xiaoming.__proto__===People.prototype);
+        //得出结论 fun.prototype属性是fun的实例的原型
+        
+        //原型链查找
+         console.log(xiaoming)
+    </script>
+</body>
+</html>

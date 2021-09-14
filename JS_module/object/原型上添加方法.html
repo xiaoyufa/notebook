@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="hello">调用小明说你好</button>
+    <button id="growup">小明长大</button>
+    <script>
+        var helloBtn = document.getElementById('hello');
+        var gupBtn = document.getElementById('growup');
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        People.prototype.sayHello = function () {
+            console.log('我是' + this.name + '今年' + this.age);
+        }
+        var timer;
+        People.prototype.growUp = function (){
+            var this_ = this;
+            clearInterval(timer);
+            timer =  setInterval(function(){
+                this_.age++;
+            },2000)
+        }
+        var xiaoming = new People('小明', 12, '男');
+        var xiaohong = new People('小红', 11, '女');
+
+        console.log(xiaoming.sayHello===xiaohong.sayHello);
+        helloBtn.onclick = function(){
+            xiaoming.sayHello()
+        }
+        gupBtn.onclick = function(){
+            xiaoming.growUp()
+        }
+        console.log(Object.prototype===xiaoming.__proto__.__proto__);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">实例化</button>
+    <div id="box"></div>
+    <script>
+        var btn = document.getElementById('btn');
+        //创建动漫图片的构造方法  点击的时候图片发生改变
+        function DomanPictures() {
+            this.picFlag = 1;
+            //实例化的时候要先将这个图片创建出来
+            this.init();
+            //绑定事件监听 
+            this.addEvent();
+        }
+        DomanPictures.prototype.init = function () {
+            console.log(this);
+            this.dom = document.createElement('img');
+            this.dom.src = '../images/pic'+this.picFlag+'.png';
+            oBox.appendChild(this.dom);
+        }
+        DomanPictures.prototype.addEvent = function () {
+            console.log('addEvent', this);
+            var self = this;
+            console.log('self',self);
+            this.dom.onclick = function () {    
+                if (self.picFlag < 3) {
+                    self.picFlag++;
+                } else {
+                    self.picFlag = 1;
+                }
+                this.src = '../images/pic'+self.picFlag+'.png';
+            }
+        
+            // this.dom.src = '../images/pic'+this.picFlag+'.png';
+
+        }
+        var oBox = document.getElementById('box');
+        btn.onclick = function () {
+            new DomanPictures();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        onload = function () {
+            var input1 = document.getElementById('input1')
+            var input2 = document.getElementById('input2')
+            var select = document.getElementById('select');
+            var button = document.getElementById('button');
+            var input3 = document.getElementById('input3');
+            //校验输入的必须是数字
+            // input1.onkeypress = function () {
+            //     console.log(input1.value)
+            //     console.log(isNaN(input1.value))
+            //     if (isNaN(input1.value)) {
+            //         alert('请输入数字');
+            //     }
+            // }
+            // input2.onkeypress = function () {
+            //     console.log(input2.value)
+            //     console.log(isNaN(input2.value))
+            //     if (isNaN(input2.value)) {
+            //         alert('请输入数字');
+            //     }
+            // }
+            button.onclick = function () {
+                var rs;
+                switch (select.value) {
+                    case '+': rs = Number(input1.value) + Number(input2.value); break;
+                    case '-': rs = Number(input1.value) - Number(input2.value); break;
+                    case '/': rs = Number(input1.value) / Number(input2.value); break;
+                    case '*': rs = Number(input1.value) * Number(input2.value); break;
+                    case '%': rs = Number(input1.value) % Number(input2.value); break;
+                    default: alert('没有符合的运算符');
+                }
+                console.log(rs);
+                input3.value = rs;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="input1">
+    <select name="select" id="select">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">x</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="input2">
+    <button id="button">=</button> <input type="text" id="input3">
+
+
+</body>
+
+</html>

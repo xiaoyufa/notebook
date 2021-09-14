@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            top: 100px;
+            left: 100px;
+            background: blue;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="start">开始运动</button>
+    <button id="stop">暂停运动</button>
+    <div id="box"></div>
+    <script>
+        var box = document.getElementById('box');
+        var oBtn = document.getElementById('start');
+        var oStop = document.getElementById('stop');
+        var timer;
+        var l = 100;
+        var t = 100;
+        oBtn.onclick = function () {
+            //防止异步
+            clearInterval(timer)
+            console.log(box.style.left)
+            console.log( t )
+            timer = setInterval(function () {
+                l += 1;
+                t -= 1;
+                box.style.left = l + 'px';
+                box.style.top = l + 'px';
+            }, 20)
+        }
+        oStop.onclick = function () {
+            clearInterval(timer)
+        }
+
+    </script>
+
+</body>
+
+</html>

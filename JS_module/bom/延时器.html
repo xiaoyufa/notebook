@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1">0</h1>
+    <script>
+        var oHead = document.getElementById('h1');
+        setTimeout(() => {
+            addWithSecond();
+        }, 5000);
+        console.log(1);
+        function addWithSecond(){
+            var a=0;
+            setInterval(function (){
+                console.log('开始执行')
+                a++;
+                oHead.innerText='5s后开始自增'+a;
+            }, 1000);
+            return a;
+        }
+    </script>
+</body>
+</html>

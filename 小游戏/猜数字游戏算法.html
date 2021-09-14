@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字算法</title>
+    <script>
+        function startGuessNumber() {
+            //获取一个随机数
+            var n = parseInt(Math.random() * 101);
+            // alert(n);
+            var min = 1;
+            var max = 100;
+            while (true) {
+                var num = Number(prompt('请输入' + min + '到' + max + '的数字'));
+                if (num > max || num < min) {
+                    alert('请输入正确的数字范围');
+                    continue;
+                }
+                if (num > n) {
+                    alert('猜大了');
+                    max = num;
+                } else if (num < n) {
+                    alert('猜小了')
+                    min = num;
+                } else {
+                    alert('恭喜你,猜对了!!');
+                    break;
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <p>游戏说明:当点击猜数字游戏的按钮时,我们会随机生成一个数据,您可以按提示输入数字,最终猜对的人获胜,如果你想重新设置猜数字的范围,可以点击重置范围按钮</p>
+    <button onclick="startGuessNumber()">猜数字游戏</button>
+    <button id="resetrange">重置范围</button>
+    <p><a href="./小游戏目录.html">返回游戏目录</a></p>
+    <script>
+        var myButton = document.getElementById("resetrange");
+        myButton.onclick = function () {
+            var num1 = Number(prompt('请输入最小值'));
+            while (isNaN(num1)) {
+                num1 = prompt('你输入的数字类型有误,请输入最小值')
+            }
+            var num2 = Number(prompt('您设置的最小值为' + num1 + '请输入最大值'));
+            while (isNaN(num2)||num2<=num1) {
+                num2 = Number(prompt('您设置的最大值为非数字或者小于等于最小值' + '您设置的最小值为' + num1 + '请重新输入最大值'));
+            }
+            startGuessNumber(num1, num2);
+
+        }
+        function startGuessNumber(num1, num2) {
+            //获取一个随机数
+            var n = parseInt(Math.random() *(num2-num1+1)+num1);
+            // console.log(n);
+            alert(n);
+            var min = num1;
+            var max = num2;
+            while (true) {
+                var num = Number(prompt('请输入' + min + '到' + max + '的数字'));
+                if (num > max || num < min) {
+                    alert('请输入正确的数字范围');
+                    continue;
+                }
+                if (num > n) {
+                    alert('猜大了');
+                    max = num;
+                } else if (num < n) {
+                    alert('猜小了')
+                    min = num;
+                } else {
+                    alert('恭喜你,猜对了!!');
+                    break;
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

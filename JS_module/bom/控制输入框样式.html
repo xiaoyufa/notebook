@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="myform">
+        <p>姓名 <input type="text" name="namefield" id="input"> <span id="span"></span></p>
+    </form>
+    <script>
+        var myform = document.getElementById('myform');
+        var namefield = document.getElementById('input');
+        var span = document.getElementById('span');
+        namefield.onfocus = function (){
+             var nameStr=namefield.value;
+             if (!nameStr){
+                span.innerText='请输入你的姓名';
+             }
+        }
+        namefield.onblur = function (){
+             var nameStr=namefield.value;
+             if (!nameStr){
+                span.innerText='姓名不能为空';
+                namefield.style.borderColor="red";
+             }else{
+                namefield.style.borderColor="";
+             }
+            
+        }
+    </script>
+</body>
+
+</html>

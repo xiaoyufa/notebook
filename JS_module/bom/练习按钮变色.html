@@ -7,9 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+    <button id="mybutton">点我变色</button>
     <script>
-        var str='';
-        for(var i=0;i<5;i++){str+=i.toString()}
+        var mybutton = document.getElementById('mybutton');
+        mybutton.onclick=function (){
+            mybutton.style.backgroundColor='blue';
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    //根据输入的文字长度来提示可输入文字数量
+    <form action="" id="myform">
+        <p id="p1">字数限制在30字以内,你还可以输入30字</p>
+        <p id="p2"><textarea name="textarea" id="textarea" cols="30" rows="10"></textarea></p>
+    </form>
+    <script>
+        var myform = document.getElementById('myform');
+        var myTeaxtarea = myform.textarea;
+        myTeaxtarea.oninput = function () {
+            var oP1 = document.getElementById('p1');
+            var str = document.getElementById('textarea').value;
+            console.log(str);
+            if (str.length <= 30) {
+                oP1.innerText = '字数限制在30字以内,你还可以输入' + (30 - str.length) + '字'
+            } else {
+                oP1.innerText = '字数限制在30字以内,你已超过' + (str.length - 30) + '字'
+            }
+        }
+
+    </script>
+</body>
+
+</html>

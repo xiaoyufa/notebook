@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            name: 'xiaoming',
+            sex: 'female',
+            "favorite-Food": ["辣椒炒肉", "小酥肉"],
+            obj:{
+                age:18,
+                subject:Math
+            }
+        }
+        var newPerson = {};
+        // for (var k in person) {
+        //     newPerson[k] = person[k];
+        // }
+        // console.log(newPerson, newPerson === person, person["favorite-Food"] === newPerson["favorite-Food"])
+
+        //递归实现深克隆 则person里的每一项都得实现深克隆, 根绝每一项的情况来分类,数组深克隆,对象深克隆,基本类型深克隆
+        function deepClone(person) {
+            var res;
+            if (Array.isArray(person)) {
+                var tempArr = [];
+                for (var i = 0; i < person.length; i++) {
+                    tempArr.push(deepClone(person[i]));
+                }
+                res = tempArr;
+            } else if (typeof person == 'object') {
+                res = {}
+                for (var k in person) {
+                    res[k] = deepClone(person[k]);
+                }
+            } else {
+                res = person;
+            }
+            return res;
+        }
+        newPerson = deepClone(person);
+        console.log(deepClone(person), newPerson === person)
+    </script>
+</body>
+
+</html>

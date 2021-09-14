@@ -8,8 +8,11 @@
 </head>
 <body>
     <script>
-        var str='';
-        for(var i=0;i<5;i++){str+=i.toString()}
+        var num = Number(prompt('请输入时间'));
+        console.log(num);
+        num = num>20?Math.ceil(num):Math.floor(num);
+        
+        document.write('您本次运动的时间是'+num+'分钟');
     </script>
 </body>
 </html>

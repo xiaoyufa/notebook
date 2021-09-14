@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:200px;
+            height: 200px;
+            border:1px solid blue;
+        }
+    </style>
+</head>
+<body>
+   <div id="box1">
+       <p>点击此诗句弹出解释</p>
+       <p id="p2">不见五陵豪杰墓,无花无酒锄作田</p>
+   </div> 
+   <script>
+       var oBox1 = document.getElementById('box1');
+        oBox1.onclick = function (){
+            alert('唐寅的诗');
+        }
+   </script>
+</body>
+</html>

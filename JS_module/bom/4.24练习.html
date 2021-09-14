@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>慕课网4.24练习</title>
+</head>
+
+<body>
+    <input type="text" id="input"><button id="button">添加</button>
+    <ul id="ul">
+        <li>吃饭</li>
+        <li>睡觉</li>
+        <li>打豆豆</li>
+    </ul>
+    <script>
+        var oUl = document.getElementById('ul')
+        var myButton = document.getElementById('button');
+        var myInput = document.getElementById('input');
+        var info = '';
+        //失焦是获取input文本内容
+        myInput.onblur = function () {
+            info = myInput.value;
+            console.log(info);
+        }
+        //点击时创建孤儿节点li
+        myButton.onclick = function (e) {
+            if(!info){
+               return ;
+            }
+            var oLi = document.createElement('li');
+            oLi.innerText = info;
+            oUl.appendChild(oLi);
+            myInput.value ='';
+        }
+        //事件委托
+        oUl.onclick = function (e){
+        //   e.target.style.color='red';
+          oUl.removeChild(e.target)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+           border: 1px solid blue;
+           width: 200px;
+           height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <p>para1</p>
+        <ol>
+            <li>测试</li>
+            <li>测试1</li>
+        </ol>
+        <p>para2</p>
+    </div>
+    <div id="box2">
+    </div>
+    <div id="box3" style="width: 300px; height: 300px;">
+    </div>
+
+    <script>
+        // 获取两个盒子对象
+        var oBox1 = document.getElementById('box1');
+        var oBox2 = document.getElementById('box2');
+        //获取盒子1的p数组和盒子1的ol数组
+        var ops = oBox1.getElementsByTagName('p');
+        var ols = oBox1.getElementsByTagName('ol')
+        console.log(ops)
+        //将p[0]和ol0放到盒子2里面
+        oBox2.appendChild(ops[0])
+        oBox2.appendChild(ols[0])
+        console.log(ops)
+        oBox2.insertBefore(ops[0],oBox2.getElementsByTagName('p')[0]);
+        //克隆一个新的
+        var oBox3 = document.getElementById('box3');
+        //
+        var cloneBox2 = oBox2.cloneNode(true);
+        oBox3.appendChild(cloneBox2);
+       var reBox2 = oBox3.getElementsByTagName('div');
+       
+       oBox3.removeChild(reBox2[0])
+    </script>
+</body>
+
+</html>

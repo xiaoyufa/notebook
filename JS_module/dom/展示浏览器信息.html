@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="button">展示浏览器信息</button>
+    <script>
+        /* 浏览器 浏览器对象模型 有 window.navigator.(appName appVersion userAgent platform) */
+        var oBtn = document.getElementById('button');
+        oBtn.onclick = function () {
+            var userAgent = window.navigator.userAgent;
+            console.log('userAgent', userAgent,typeof userAgent);
+            if(userAgent.includes('Firefox')){
+                alert('火狐浏览器')
+            }else if(userAgent.includes('Chrome')){
+                alert('谷歌浏览器')
+            }else if(userAgent.includes('MSIE')){
+                alert('Ie浏览器')
+            }
+            setTimeout(function(){
+                window.location.href='https://www.zhihu.com/?a=1&b=2';
+            },2000)
+        }
+    </script>
+</body>
+
+</html>

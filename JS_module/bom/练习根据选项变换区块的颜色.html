@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <select name="select" id="select" >
+        <option value="1">红</option>
+        <option value="2">蓝</option>
+        <option value="3">黄</option>
+        <option value="4">绿</option>
+        <option value="5" selected>未选择</option>
+    </select>
+
+    <div id="box1">
+        我是区块1
+    </div>
+    <script>
+        var select = document.getElementById('select');
+        var oBox = document.getElementById('box1');
+        select.onchange = function () {
+            var selectValue = select.value;
+            console.log(selectValue)
+            // if(selectValue==1){
+            //     oBox.style.backgroundColor='red';
+            //     oBox.innerText="我的背景变红了";
+            // }
+            switch(Number(selectValue)){
+                case 1:
+                oBox.style.backgroundColor='red';
+                oBox.innerText="我的背景变红了";
+                break;
+                case 2:
+                oBox.style.backgroundColor='blue';
+                oBox.innerText="我的背景变蓝了";
+                break;
+                case 3:
+                oBox.style.backgroundColor='yellow';
+                oBox.innerText="我的背景变黄了";
+                break;
+                case 4:
+                oBox.style.backgroundColor='green';
+                oBox.innerText="我的背景变绿了";
+                break;
+                default:
+                oBox.style.backgroundColor='';
+                oBox.innerText="我的背景没有发生改变";
+            }
+        }
+    </script>
+</body>
+
+</html>

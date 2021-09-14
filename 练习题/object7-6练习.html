@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [];
+        var a = 99;
+        var b = 1;
+        var len = 10;
+        for (var i = 0; i < len; i++) {
+            arr.push(parseInt(Math.random() * (a - b + 1)) + b);
+        }
+        console.log('arr', arr);
+        arr.sort(function (a, b) {
+            return a > b ? -1 : 1;
+        })
+        console.log(arr);
+        var str = "";
+        for (var i = 0; i < len; i++) {
+            str += arr[i];
+            if (i == len - 1) {
+                break;
+            }
+            str +=',' ;
+        }
+        str+="<br>这组数据最大的值是 :"+Math.max.apply(null,arr)+'最小的值是 '+Math.min(...arr);
+        document.write(str); 
+        
+    </script>
+
+</body>
+
+</html>

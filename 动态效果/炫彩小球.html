@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+        }
+
+        .box {
+            background: red;
+            position: absolute;
+
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var ballArr = [];
+        function Ball(x, y) {
+            this.t = 50;
+            this.l = 50;
+            //初始化这个小球
+            this.init();
+            console.log(this);
+            //让小盒子动起来
+            ballArr.push(this);
+        }
+        Ball.prototype.init = function () {
+            this.dom = document.createElement('div');
+            this.dom.className = 'box';
+            document.body.appendChild(this.dom);
+            this.dom.style.width = '50px';
+            this.dom.style.height = '50px';
+        }
+    </script>
+</body>
+
+</html>
