@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承</title>
+</head>
+
+<body>
+    <script>
+        // 父类
+        function People(name, sex, age) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.arr = [1,23]
+            this.color = 1;
+        }
+        People.prototype.sayHello = function () {
+            console.log('我是' + this.name + ',今年' + this.age + '岁');
+        }
+        //子类
+        function Student(name, sex, age, studentNumber) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.studentNumber = studentNumber;
+        }
+        //实现子类对父类的继承
+        Student.prototype = new People();
+        //追加方法
+        Student.prototype.schoolName = function () {
+            console.log('我的学号是' + this.studentNumber);
+        }
+        //重写或者改写父类的方法
+        Student.prototype.sayHello = function () {
+            console.log('敬礼,您好,我是' + this.name);
+        }
+        //构造实例
+        var xiaoming = new Student('小明', '男', 12, '24078');
+        console.log(xiaoming);
+        xiaoming.arr.push(1);
+        xiaoming.color = 2;
+        console.log(xiaoming);
+    </script>
+</body>
+
+</html>

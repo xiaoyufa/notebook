@@ -10,10 +10,13 @@
 
 <body>
     <script>
-        var date = new Date();
-        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
-        document.write('今天是'+arr[date.getDay()]);
-        
+        var regexp = /\d{3}-\d{4}-\d{3}/
+        var regexp1 = /^\d{3}-\d{4}-\d{3}$/
+        console.log(regexp.test('001-0029-001'))
+        console.log(regexp1.test('001-0029-001'))
+        var str = '...';
+        var regexp3 = /^\.{3}$/;
+        console.log(regexp3.test(str))
     </script>
 </body>
 

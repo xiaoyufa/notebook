@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: '小明',
+            sex: '男',
+            age: 12
+        }
+        function f(obj) {
+            var o = Object.create(obj);
+            o.sayHello = function () {
+                console.log('你好,我是' + this.name + '今年' + this.age);
+            }
+            return o;
+        }
+        var obj1 = f(obj);
+        obj1.sayHello();
+    </script>
+</body>
+
+</html>

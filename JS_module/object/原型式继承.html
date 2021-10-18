@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        var xiaoming = new People('小明', 12, '男');
+        console.log(xiaoming);
+        //原型式记录
+        var xiaoming1 = Object.create(xiaoming);
+        xiaoming1.d = 12;
+        console.log(People.prototype);
+        console.log(xiaoming1.__proto__);
+        console.log(People.prototype===xiaoming1.__proto__);
+        console.log(xiaoming1.hasOwnProperty('name'));
+        //ie9以上才支持原型式继承 Object.create(o) 创建出来的是一个对象
+        var test1 = create(xiaoming1);
+        console.log('test1',test1);
+        function create(o){
+            return Object.create(o);
+        }
+        //实现兼容性写法
+        function create1(o){
+            //定义一个构造函数
+            function Fun(){};
+            //构造函数的prototype 等于 O
+            Fun.prototype = o;
+            return new Fun();
+        }
+       var test2 =  create1(xiaoming1);
+       console.log(test2);
+       console.log(test2==test1);
+        
+    </script>
+</body>
+
+</html>

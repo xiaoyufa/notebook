@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>2022年高考倒计时</h1>
+    <p id="p1"></p>
+    <script>
+        var oP = document.getElementById('p1');
+        var examDate = new Date('2022-06-07');
+        console.log('examDate', examDate);
+        setInterval(function () {
+            var date = new Date();
+            console.log('date', date);
+            var examTimeStamp = Date.parse(examDate);
+            var dateTimeStamp = Date.parse(date);
+            //计算差的毫秒数 取整
+            var differSeconds = Math.round((examTimeStamp - dateTimeStamp) / 1000);
+            console.log('differSeconds', differSeconds);
+            //分别计算天数
+            var days = Math.floor(differSeconds / 60 / 60 / 24);
+            var hours = Math.floor(differSeconds / 60 / 60 - days * 24);
+            var mins = Math.floor(differSeconds / 60 - days * 60 * 24 - hours * 60);
+            var seconds = Math.floor(differSeconds - days * 60 * 60 * 24 - hours * 60 * 60 - mins * 60);
+            oP.innerText = '距离2022年高考还有' + days + '天' + hours + '小时' + mins + '分钟' + seconds + '秒';
+        }, 1000)
+
+
+
+    </script>
+</body>
+
+</html>

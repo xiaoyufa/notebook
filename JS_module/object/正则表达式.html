@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //简单正则表达式的使用
+        var regexp = /^m\d{6}n$/; 
+        console.log(regexp.test('m00n'));
+        console.log(regexp.test('m0nn'));
+        console.log(regexp.test('m012345n'));
+        //正则表达式的创建
+       var regexp1 = /^\d{3}$/;
+       //反斜线 多谢一个 
+       var  regexp2 = new RegExp('^\\d{3}$');
+       var str='112'
+       console.log(regexp1.test(str));
+       console.log(regexp2.test(str));
+
+    </script>
+</body>
+</html>

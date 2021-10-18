@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Array.prototype.qiuhe = function () {
+            var arr = this;
+            var sum = 0;
+            for(var i in arr){
+                console.log(i);
+            }
+            // for (var i = 0; i < arr.length; i++) {
+            //     sum += arr[i];
+            // }
+            return sum;
+        }
+        console.log(Array)
+        var arr = [1, 2, 3];
+        var res = arr.qiuhe();
+        console.log(res, typeof res)
+        console.log(1 + Number(res))
+
+    </script>
+</body>
+
+</html>

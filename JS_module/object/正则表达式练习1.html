@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //字符串是否为5为字母大小写皆可
+        var str = "awqwq";
+        var regexp = /^[a-zA-Z]{5}$/
+        //验证字符串为5位,仅由小写字母.构成
+        var regexp1 = /^[a-z.]$/;
+        //验证字符串是否是4位小写字母且最后一位不能是m字母
+        var regexp2 = /^[a-z]{3}[a-ln-z]$/;
+        console.log(regexp2.test('awea'));
+         var regexp3 = /^1[3-9]\d{5}$/;
+         console.log(regexp3.test(1389089))
+         //量词
+         var regexp4 = /^[a-zA-Z]\d+[a-zA-Z]$/
+         //
+         var regexp5 =/^www\.\w+\.com(\.cn)?$/ 
+         console.log(regexp5.test('www.v777k.com'));
+    </script>
+</body>
+</html>
